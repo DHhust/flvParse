@@ -7,19 +7,24 @@ typedef struct
 	unsigned char version;
 	unsigned char flvInformation;
 	unsigned int headerLength;
-}flvHeader, *p_flvHeader;
+}_FlvHeader, *p_FlvHeader;
 
 
 typedef struct
 {
 	unsigned char tagType;
-
-	unsigned char timeStamp[3];
+	unsigned int dataSize;
+	unsigned int timeStamp;
 	unsigned char timeStampExt;
-	unsigned char streamID[3];
-}tagHeader, *p_tagHeader;
+	unsigned int streamID;
+}_TagHeader, *p_TagHeader;
 
 
+typedef struct
+{
+	p_TagHeader flvTagHeader;
+	unsigned char* flvTagData;
+}_Tag, *p_Tag;
 
 #endif // !_FLV_PARSE_H
 
