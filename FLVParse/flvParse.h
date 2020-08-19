@@ -13,6 +13,7 @@ typedef struct
 typedef struct
 {
 	unsigned char tagType;
+
 	unsigned char timeStamp[3];
 	unsigned char timeStampExt;
 	unsigned char streamID[3];
